@@ -1,0 +1,19 @@
+.product-section{
+	background: url('../../images/section3-bg.png');
+	width: 100%;
+	height: 550px;
+	margin-top: 300px;
+	text-align: center;
+}
+
+.product-section-title{
+	color: #a77b51;
+	font-weight: 500;
+	letter-spacing: 5px;
+	margin: 50px 0;
+}
+
+.product-content{
+	position: relative;
+	top: -200px;
+}

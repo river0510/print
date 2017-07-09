@@ -1,0 +1,25 @@
+.footer-item{
+	width: 14%;
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer-item-title{
+	color: #c5a78b;
+	font-size: 16px;
+	padding: 20px 0;
+	font-weight: 200;
+}
+
+.footer-item-link{
+	color: #c5a78b;
+	display: block;
+	font-size: 13px;
+	margin: 10px 0;
+	font-weight: 200;
+}
+.footer-item-link:hover{
+	color: #c5a78b;
+	text-decoration: underline;
+}

@@ -1,0 +1,30 @@
+.product-figure{
+	width: 40%;
+	display: inline-block;
+	margin: 0 50px;
+}
+
+.product-figure img{
+	width: 100%;
+	cursor: pointer;
+}
+
+.product-figure figcaption{
+	margin-top: 30px;
+	padding: 0 20px;
+	cursor: pointer;
+}
+
+.figure-title{
+	color: #a77b51;
+	text-align: left;
+	font-size: 18px;
+	font-weight: 200;
+}
+
+.figure-content{
+	color: #fff;
+	text-align: left;
+	font-size: 14px;
+	font-weight: 200;
+}

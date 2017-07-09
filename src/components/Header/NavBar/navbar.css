@@ -1,0 +1,9 @@
+.navbar-wrapper{
+	width: 70%;
+	height: 100%;
+	display: inline-block;
+}
+.navbar{
+	height: 50px;
+	text-align: center;
+}
