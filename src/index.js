@@ -7,8 +7,8 @@ import {
 	hashHistory
 } from 'react-router'
 import Layout from './layout/Layout.js'
-import Home from './components/Home.js'
-import Gallery from './components/Gallery.js'
+import Home from './components/HomePage.js'
+import Gallery from './components/GalleryPage.js'
 
 // Render the main component into the dom
 ReactDOM.render(

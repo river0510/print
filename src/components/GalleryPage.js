@@ -8,12 +8,13 @@ import Header from './Header'
 import Slide from './Slide'
 import EntrySection from './EntrySection'
 import ProductSection from './ProductSection'
+import Gallery from './Gallery'
 
 class AppComponent extends React.Component {
   render() {
     return (
       <div className="index">
-        <div>体验馆</div>
+        <Gallery/>
       </div>
     );
   }

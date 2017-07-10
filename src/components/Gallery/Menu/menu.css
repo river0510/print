@@ -1,0 +1,112 @@
+.gallery-menu{
+	height: 100%;
+	width: 350px;
+	background: rgba(255,255,255,0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-top: 50px;
+}
+
+.gallery-navItem{
+	margin: 5px;
+	width: 40px;
+	height: 30px;
+	font-size: 14px;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	border: 1px solid rgba(255,255,255,0);
+	cursor: pointer;
+	transition: all 0.6s;
+}
+
+.gallery-navItem:hover{
+	border: 1px solid #a77b51;	
+}
+
+.nav-bar{
+	background: url('../../../images/nav-bg.png') no-repeat center;
+	height: 80px;
+	width: 300px;
+	margin: auto;
+	text-align: center;
+	padding-top: 28px;
+	margin-top: 20px;
+}
+
+.thumbnail{
+	height: 100px;
+	width: 100px;
+	display: inline-block;
+	margin: 10px;
+	padding: 5px;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px solid rgba(255,255,255,0);
+	transition: all 0.6s;
+}
+.thumbnail:hover{
+	border: 1px solid #a77b51;
+}
+.thumbnail img{
+	width: 100%;
+	height: 100%;
+}
+
+.thumbnail-wrapper{
+	width: 260px;
+	margin: auto;
+	margin-top: 50px;
+}
+
+.thumbnail-page{
+	text-align: center;
+	margin: 20px;
+}
+
+.page-cell{
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #a77b51;
+	margin: 20px;
+	display: inline-block;
+	color: #a77b51;
+	font-size: 12px;
+	line-height: 19px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.6s;
+}
+.page-cell:hover{
+	background: #a77b51;
+	color: #fff;
+}
+
+.hide-bar{
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	cursor: pointer;
+}
+.hide-bar .arrow{
+	background: url('../../../images/arrow.png') no-repeat center;
+	height: 25px;
+	width: 50px;
+	margin: auto;
+	transition: all 0.15s;
+}
+.hide-bar p{
+	color: #000;
+	font-size: 16px;
+	margin: 20px 0;
+	font-weight: 200;
+}
+
+.hide-bar:hover .arrow{
+	transform: rotate(180deg);
+}

@@ -1,0 +1,15 @@
+.gallery-button{
+	border: 1px solid #a77b51;
+	color: #a77b51;
+	padding: 5px;
+	font-size: 12px;
+	line-height: 12px;
+	letter-spacing: 4px;
+	background: #fff;
+	cursor: pointer;
+}
+
+.gallery-button:hover{	
+	background: #a77b51;
+	color: #fff;
+}

@@ -1,0 +1,18 @@
+.gallery-top{
+	position: relative;
+	width: 100%;
+	line-height: 0;
+	font-size: 0;
+}
+
+.clearfix:after{ 
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix{ /*兼容 IE*/
+    zoom: 1;
+}
