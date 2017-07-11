@@ -20,7 +20,7 @@ export default class ChosedBar extends React.Component{
 						</div>
 						<div className='arrow-right'></div>
 					</div>
-					<Button style={{margin: '20px'}}><p>一键加入</p><p>购物袋</p></Button>
+					<Button className='button'><p>一键加入</p><p>购物袋</p></Button>
 				</div>
 			</div>
 		)
