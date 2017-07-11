@@ -5,7 +5,7 @@ export default class Button extends React.Component{
 	render(){
 		return(
 			<div {...this.props}>
-				<button className='gallery-button'>{this.props.children}</button>
+				<div className='gallery-button'>{this.props.children}</div>
 			</div>
 		)
 	}
