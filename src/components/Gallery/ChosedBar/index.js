@@ -3,6 +3,7 @@ import './chosedBar.css'
 import chosed1 from '../../../images/chosed1.png'
 import chosed2 from '../../../images/chosed2.png'
 import Button from '../Button'
+import Text from '../../Text'
 
 const iconWidth = 160;
 
@@ -17,7 +18,7 @@ export default class ChosedBar extends React.Component{
 		return(
 			<div className='chosed-bar'>
 				<div className='chosed-bar-wrapper'>					
-					<div className='title'>已选项目</div>
+					<div className='title'><Text text={['已选项目','Chosed']}/></div>
 					<div className='icon-bar'>
 						<div className='arrow-left' onClick={this._leftControll}></div>
 						<div className='icon-box' style={{width: 160 * 4}}>
@@ -33,7 +34,7 @@ export default class ChosedBar extends React.Component{
 						</div>
 						<div className='arrow-right' onClick={this._rightControll}></div>
 					</div>
-					<Button className='button'><p>一键加入</p><p>购物袋</p></Button>
+					<Button className='button'><p><Text text={['一键加入']}/></p><p><Text text={['购物袋']}/></p></Button>
 				</div>
 			</div>
 		)
@@ -79,7 +80,7 @@ class Icon extends React.Component{
 	render(){
 		return(
 			<div className='icon' style={{backgroundImage: `url('${this.props.img}')`}}>
-				<div className='mask'><span>移除</span></div>
+				<div className='mask'><Text text={['移除']}/></div>
 			</div>
 		)
 	}

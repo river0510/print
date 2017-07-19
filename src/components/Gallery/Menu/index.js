@@ -16,11 +16,11 @@ export default class Menu extends React.Component{
 			<div className={menuClassName}>
 				<div className='menu-wrapper'>
 					<div className='nav-bar'>
-						<NavItem title='墙纸'/>
-						<NavItem title='沙发'/>
-						<NavItem title='抱枕'/>
-						<NavItem title='窗帘'/>
-						<NavItem title='装饰'/>
+						<NavItem title={['墙纸']}/>
+						<NavItem title={['沙发']}/>
+						<NavItem title={['抱枕']}/>
+						<NavItem title={['窗帘']}/>
+						<NavItem title={['装饰']}/>
 					</div>
 					<div className='thumbnail-wrapper'>
 						<Thumbnail img={pillow1}/>
@@ -36,7 +36,7 @@ export default class Menu extends React.Component{
 				</div>
 				<div className='hide-bar' onClick={this._showMenu}>
 					<div className='arrow'></div>
-					<p >{this.state.isShow ? '隱藏菜單' : '顯示菜單'}</p>
+					<p >{this.state.isShow ? <Text text = {['隱藏菜單']} /> : <Text text = {['顯示菜單']} />}</p>
 				</div>
 			</div>
 		)
