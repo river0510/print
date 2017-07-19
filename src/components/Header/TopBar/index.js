@@ -10,6 +10,7 @@ class TopBar extends React.Component{
 			<div className='header-topbar'>
 				<div className='topbar-left'>
 					<span onClick={this._changeLanguageClick} value="1">英文</span>
+					<span onClick={this._changeLanguageClick} value="0">中文</span>
 				</div>
 				<div className='topbar-right'></div>
 			</div>
@@ -18,7 +19,6 @@ class TopBar extends React.Component{
 
 	_changeLanguageClick = (e)=>{
 		let id = Number(e.target.getAttribute('value'));
-		console.log(id);
 		this.props.changeLanguage(id);
 	}
 }
