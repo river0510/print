@@ -25,6 +25,30 @@ const initialState = {
 					thumbnail: stage2Thumb,
 					id: "02",
 					commodityId: 0
+				},{
+					stage: stage1,
+					stageHover: stage1Hover,
+					thumbnail: stage1Thumb,
+					id: "03",
+					commodityId: 0
+				},{
+					stage: stage2,
+					stageHover: stage2Hover,
+					thumbnail: stage2Thumb,
+					id: "04",
+					commodityId: 0
+				},{
+					stage: stage1,
+					stageHover: stage1Hover,
+					thumbnail: stage1Thumb,
+					id: "05",
+					commodityId: 0
+				},{
+					stage: stage2,
+					stageHover: stage2Hover,
+					thumbnail: stage2Thumb,
+					id: "06",
+					commodityId: 0
 				}
 			]
 		}

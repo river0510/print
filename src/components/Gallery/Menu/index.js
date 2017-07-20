@@ -1,21 +1,22 @@
 import React from 'react'
 import './menu.css'
 import Text from '../../Text'
-import pillow1 from '../../../images/pillow1.png'
-import pillow2 from '../../../images/pillow2.png'
-import pillow3 from '../../../images/pillow3.png'
-import pillow4 from '../../../images/pillow4.png'
 import actions from '../../../actions'
 import {connect} from 'react-redux'
 const {gallery} = actions;
 
+//每个页面显示的icon数目
+const showIconNumber = 4;
+const pageWidth = 240;
+
 class Menu extends React.Component{
 	state={
-		isShow: true
+		isShow: true,
+		chosedPage: 1
 	}
 	render(){
 		let menuClassName = this.state.isShow ? 'gallery-menu' : 'gallery-menu menu-hide'
-		let navItems = [], thumbnails = [], pageCells = [], menuPic = [];
+		let navItems = [], thumbnails = [], pageCells = [], menuPic = [], pages = [];
 		let {picData, chosedMenuId} = this.props;
 
 		//装载navitem,获取选中菜单的menuPic
@@ -30,6 +31,22 @@ class Menu extends React.Component{
 		menuPic.forEach((item,index)=>{
 			thumbnails.push(<Thumbnail img={item.thumbnail} key={item.id} onClick={this._printClick.bind(this,item.id)} onMouseOver={this._printMouseOver.bind(this,item.id)} onMouseOut={this._printMouseOut.bind(this)}/>)
 		})
+		
+		//进行分页
+		let onePage = [];
+		for(let i = 0; i < thumbnails.length; i = i + showIconNumber){
+			if(i + showIconNumber > thumbnails.length){
+				onePage = thumbnails.slice(i);
+			}else{
+				onePage = thumbnails.slice(i, i + showIconNumber);
+			}
+			pages.push(<div className='thumbnail-page' key={i/showIconNumber + 1}>{onePage}</div>)
+		}
+
+		//装载分页按钮
+		for(let i = 0; i < pages.length; i++){
+			pageCells.push(<PageCell number={i+1} onClick={this._chosePage.bind(this,i+1)} key={i+1}/>)
+		}
 
 		return(
 			<div className={menuClassName}>
@@ -38,12 +55,12 @@ class Menu extends React.Component{
 						{navItems}
 					</div>
 					<div className='thumbnail-wrapper'>
-						{thumbnails}
+						<div className='thumbnail-page-wrapper' style={{width: pageWidth * pages.length, left: - (this.state.chosedPage - 1) * pageWidth}}>
+							{pages}
+						</div>
 					</div>
-					<div className='thumbnail-page'>
-						<PageCell number='1'/>
-						<PageCell number='2'/>
-						<PageCell number='3'/>
+					<div className='page-cell-wrapper'>
+						{pageCells}
 					</div>
 				</div>
 				<div className='hide-bar' onClick={this._showMenu}>
@@ -80,6 +97,12 @@ class Menu extends React.Component{
 		e.stopPropagation();
 		this.props.mouseOutPrint();
 	}
+
+	_chosePage(page){
+		this.setState({
+			chosedPage: page
+		})
+	}
 }
 
 class NavItem extends React.Component{
@@ -105,7 +128,7 @@ class Thumbnail extends React.Component{
 class PageCell extends React.Component{
 	render(){
 		return(
-			<div className='page-cell'>
+			<div className='page-cell' onClick={this.props.onClick}>
 				{this.props.number}
 			</div>
 		)
