@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
 import language from './language.js'
+import gallery from './gallery.js'
 
 const reducers = {
-	language
+	language,
+	gallery
 }
 
 const combined = combineReducers(reducers);

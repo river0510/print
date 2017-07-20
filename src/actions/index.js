@@ -1,7 +1,9 @@
 import language from './language.js'
+import gallery from './gallery.js'
 
 const actions = {
-	language
+	language,
+	gallery
 }
 
 export default actions

@@ -4,32 +4,35 @@ import chosed1 from '../../../images/chosed1.png'
 import chosed2 from '../../../images/chosed2.png'
 import Button from '../Button'
 import Text from '../../Text'
+import actions from '../../../actions'
+import {connect} from 'react-redux'
+const { gallery } = actions
 
 const iconWidth = 160;
+const showIconNumber = 4;
 
-export default class ChosedBar extends React.Component{
+class ChosedBar extends React.Component{
 	state={
 		left: 0,
-		number: 7,
 		animation: ''
 	}
 	render(){
-		let {left, number,animation} = this.state;
+		let {left, animation} = this.state;
+		let {chosedPic, removePrint} = this.props;
+		let number = chosedPic.length;
+		let icons = [];
+		chosedPic.forEach((item,index)=>{
+			icons.push(<Icon img={item.thumbnail} key={index}/>)
+		})
 		return(
 			<div className='chosed-bar'>
 				<div className='chosed-bar-wrapper'>					
 					<div className='title'><Text text={['已选项目','Chosed']}/></div>
 					<div className='icon-bar'>
 						<div className='arrow-left' onClick={this._leftControll}></div>
-						<div className='icon-box' style={{width: 160 * 4}}>
+						<div className='icon-box' style={{width: iconWidth * showIconNumber}}>
 							<div className='icon-wrapper' style={{left: left,width: number * iconWidth, animation: animation}}>
-								<Icon img={chosed1} />
-								<Icon img={chosed1} />
-								<Icon img={chosed1} />
-								<Icon img={chosed1} />
-								<Icon img={chosed1} />
-								<Icon img={chosed1} />
-								<Icon img={chosed1} />
+								{icons}
 							</div>
 						</div>
 						<div className='arrow-right' onClick={this._rightControll}></div>
@@ -40,7 +43,7 @@ export default class ChosedBar extends React.Component{
 		)
 	}
 	_leftControll = ()=>{
-		if(Math.abs(this.state.left) == (this.state.number - 4) * iconWidth){
+		if(Math.abs(this.state.left) == (this.props.chosedPic.length - showIconNumber) * iconWidth){
 			this.setState({
 				animation: 'leftLimit 0.6s'
 			})
@@ -85,3 +88,19 @@ class Icon extends React.Component{
 		)
 	}
 }
+
+function mapStateToProps(state){
+	return {
+		chosedPic: state.gallery.chosedPic
+	}
+}
+
+function mapDispatchToProps(dispatch){
+	return {
+		removePrint: (id)=>{
+			dispatch(gallery.removePrint(id))
+		}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChosedBar)

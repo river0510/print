@@ -5,28 +5,40 @@ import pillow1 from '../../../images/pillow1.png'
 import pillow2 from '../../../images/pillow2.png'
 import pillow3 from '../../../images/pillow3.png'
 import pillow4 from '../../../images/pillow4.png'
+import actions from '../../../actions'
+import {connect} from 'react-redux'
+const {gallery} = actions;
 
-export default class Menu extends React.Component{
+class Menu extends React.Component{
 	state={
 		isShow: true
 	}
 	render(){
 		let menuClassName = this.state.isShow ? 'gallery-menu' : 'gallery-menu menu-hide'
+		let navItems = [], thumbnails = [], pageCells = [], menuPic = [];
+		let {picData, chosedMenuId} = this.props;
+
+		//装载navitem,获取选中菜单的menuPic
+		picData.forEach((item,index)=>{
+			navItems.push(<NavItem title={item.menuName} key={item.menuId} onClick={this._menuClick.bind(this,item.menuId)}/>)
+			if(item.menuId === chosedMenuId){
+				menuPic = item.menuPic;
+			}
+		})
+
+		//装载选中菜单下的icon
+		menuPic.forEach((item,index)=>{
+			thumbnails.push(<Thumbnail img={item.thumbnail} key={item.id} onClick={this._printClick.bind(this,item.id)} onMouseOver={this._printMouseOver.bind(this,item.id)} onMouseOut={this._printMouseOut.bind(this)}/>)
+		})
+
 		return(
 			<div className={menuClassName}>
 				<div className='menu-wrapper'>
 					<div className='nav-bar'>
-						<NavItem title={['墙纸']}/>
-						<NavItem title={['沙发']}/>
-						<NavItem title={['抱枕']}/>
-						<NavItem title={['窗帘']}/>
-						<NavItem title={['装饰']}/>
+						{navItems}
 					</div>
 					<div className='thumbnail-wrapper'>
-						<Thumbnail img={pillow1}/>
-						<Thumbnail img={pillow2}/>
-						<Thumbnail img={pillow3}/>
-						<Thumbnail img={pillow4}/>
+						{thumbnails}
 					</div>
 					<div className='thumbnail-page'>
 						<PageCell number='1'/>
@@ -48,12 +60,32 @@ export default class Menu extends React.Component{
 			isShow
 		})
 	}
+
+	_menuClick(id){
+		this.props.choseMenu(id);
+	}
+
+	_printClick(id){
+		this.props.chosePrint(id);
+	}
+
+	_printMouseOver(id,e){
+		e.preventDefault();
+		e.stopPropagation();
+		this.props.mouseOverPrint(id)
+	}
+
+	_printMouseOut(e){
+		e.preventDefault();
+		e.stopPropagation();
+		this.props.mouseOutPrint();
+	}
 }
 
 class NavItem extends React.Component{
 	render(){
 		return(
-			<div className='gallery-navItem'>
+			<div className='gallery-navItem' onClick={this.props.onClick}>
 				<Text text={this.props.title}/>
 			</div>
 		)
@@ -63,8 +95,8 @@ class NavItem extends React.Component{
 class Thumbnail extends React.Component{
 	render(){
 		return(
-			<div className='thumbnail'>
-				<img src={this.props.img} alt="thumbnail"/>
+			<div onClick={this.props.onClick}className='thumbnail'>
+				<img src={this.props.img} alt="thumbnail"  onMouseOver={this.props.onMouseOver} onMouseOut={this.props.onMouseOut} />
 			</div>
 		)
 	}
@@ -79,3 +111,29 @@ class PageCell extends React.Component{
 		)
 	}
 }
+
+function mapStateToProps(state){
+	return {
+		picData: state.gallery.picData,
+		chosedMenuId: state.gallery.chosedMenuId
+	}
+}
+
+function mapDispatchToProps(dispatch){
+	return {
+		choseMenu: (id) => {
+			dispatch(gallery.choseMenu(id))
+		},
+		chosePrint: (id)=> {
+			dispatch(gallery.chosePrint(id))
+		},
+		mouseOverPrint: (id)=>{
+			dispatch(gallery.mouseOverPrint(id))
+		},
+		mouseOutPrint: ()=>{
+			dispatch(gallery.mouseOutPrint())
+		}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu)

@@ -1,20 +1,25 @@
 import React from 'react'
 import './gallery.css'
 import StagePic from './StagePic'
-import mainStage from '../../images/main-stage.jpg';
 import Menu from './Menu'
 import ChosedBar from './ChosedBar'
+import {connect} from 'react-redux'
 
-export default class Gallery extends React.Component{
+class Gallery extends React.Component{
 	render(){
+		let {chosedPic, mainStage, hoverStage, isHover} = this.props;
+		let stagePic = [];
+		chosedPic.forEach((item,index)=>{
+			stagePic.push(<StagePic img={item.stage} key={index}/>)
+		})
 		return(
-			<div className='gallery clearfix'>
+			<div className='gallery'>
 				<div className='gallery-top'>
 					<StagePic img={mainStage} main/>
-					<StagePic img={mainStage} />
-					<StagePic img={mainStage} />
-					<StagePic img={mainStage} />
-					<StagePic img={mainStage} />
+					{stagePic}
+					<StagePic 
+						img={ hoverStage } 
+						style={isHover ? {opacity: 1} : {opacity: 0}}/>
 					<Menu/>
 				</div>	
 				<ChosedBar/>
@@ -22,3 +27,15 @@ export default class Gallery extends React.Component{
 		)
 	}
 }
+
+function mapStateToProps (state){
+	return {
+		picData: state.gallery.picData,
+		chosedPic: state.gallery.chosedPic,
+		mainStage: state.gallery.mainStage,
+		hoverStage: state.gallery.hoverStage,
+		isHover: state.gallery.isHover
+	}
+}
+
+export default connect(mapStateToProps)(Gallery)

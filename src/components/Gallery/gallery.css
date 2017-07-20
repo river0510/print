@@ -5,14 +5,24 @@
 	font-size: 0;
 }
 
-.clearfix:after{ 
+/*@keyframes showStage{
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes hideStage{
+    0% {opacity: 1}
+    100% {opacity: 0}
+}*/
+
+/*.clearfix:after{ 
     content: '';
     display: block;
     clear: both;
     height: 0;
     visibility: hidden;
-}
+}*/
 
-.clearfix{ /*兼容 IE*/
+/*.clearfix{ 兼容 IE
     zoom: 1;
-}
+}*/
