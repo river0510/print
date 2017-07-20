@@ -51,6 +51,30 @@ const initialState = {
 					commodityId: 0
 				}
 			]
+		},{
+			menuId: 1,
+			menuName: ['沙发','SOFA'],
+			menuPic: [
+				{
+					stage: stage2,
+					stageHover: stage2Hover,
+					thumbnail: stage2Thumb,
+					id: "01",
+					commodityId: 0
+				}
+			]
+		},{
+			menuId: 2,
+			menuName: ['抱枕','PILLOW'],
+			menuPic: [
+				{
+					stage: stage1,
+					stageHover: stage1Hover,
+					thumbnail: stage1Thumb,
+					id: "01",
+					commodityId: 0
+				}
+			]
 		}
 	],
 	chosedMenuId: 0,
