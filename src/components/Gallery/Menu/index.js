@@ -48,7 +48,7 @@ class Menu extends React.Component{
 				</div>
 				<div className='hide-bar' onClick={this._showMenu}>
 					<div className='arrow'></div>
-					<p >{this.state.isShow ? <Text text = {['隱藏菜單']} /> : <Text text = {['顯示菜單']} />}</p>
+					<p >{this.state.isShow ? <Text text = {['隱藏菜單','HIDE']} /> : <Text text = {['顯示菜單','SHOW']} />}</p>
 				</div>
 			</div>
 		)

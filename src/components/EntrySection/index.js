@@ -12,8 +12,8 @@ export default class EntrySection extends React.Component{
 					<img src={header} alt=""/>
 				</div>
 				<div className='entry-section-title'>
-					<p><Text text={['開始你的']}/></p>
-					<p><Text text={['專屬搭配之旅']}/></p>
+					<p><Text text={['開始你的','START YOUR']}/></p>
+					<p><Text text={['專屬搭配之旅','EXCLUSIVE MATCH TRIP']}/></p>
 				</div>
 				<div className='entry-section-btn'>
 					<img src={btn} alt=""/>

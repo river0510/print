@@ -39,7 +39,7 @@
 }
 
 .gallery-navItem:hover{
-	border: 1px solid #a77b51;	
+	color: #a56d38;	
 }
 
 .nav-bar{
@@ -72,9 +72,10 @@
 }
 
 .thumbnail-wrapper{
-	width: 260px;
+	width: 240px;
 	margin: auto;
 	margin-top: 50px;
+	font-size: 0;
 }
 
 .thumbnail-page{

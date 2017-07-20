@@ -9,8 +9,9 @@ class TopBar extends React.Component{
 		return(
 			<div className='header-topbar'>
 				<div className='topbar-left'>
-					<span onClick={this._changeLanguageClick} value="1">英文</span>
-					<span onClick={this._changeLanguageClick} value="0">中文</span>
+					<span className='topbar-button' onClick={this._changeLanguageClick} value="0">中文</span>
+					<span >|</span>
+					<span className='topbar-button' onClick={this._changeLanguageClick} value="1">English</span>
 				</div>
 				<div className='topbar-right'></div>
 			</div>

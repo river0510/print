@@ -37,7 +37,7 @@ class ChosedBar extends React.Component{
 						</div>
 						<div className='arrow-right' onClick={this._rightControll}></div>
 					</div>
-					<Button className='button'><p><Text text={['一键加入']}/></p><p><Text text={['购物袋']}/></p></Button>
+					<Button className='button'><p><Text text={['一键加入','Add To']}/></p><p><Text text={['购物袋','Shopping Cart']}/></p></Button>
 				</div>
 			</div>
 		)
@@ -87,7 +87,7 @@ class Icon extends React.Component{
 	render(){
 		return(
 			<div className='icon' style={{backgroundImage: `url('${this.props.img}')`}} onClick={this.props.onClick}>
-				<div className='mask'><Text text={['移除']}/></div>
+				<div className='mask'><Text text={['移除','REMOVE']}/></div>
 			</div>
 		)
 	}

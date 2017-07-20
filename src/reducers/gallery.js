@@ -11,7 +11,7 @@ const initialState = {
 	picData: [
 		{
 			menuId: 0,
-			menuName: ['墙纸'],
+			menuName: ['墙纸','WALL'],
 			menuPic: [
 				{
 					stage: stage1,

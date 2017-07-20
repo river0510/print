@@ -4,5 +4,23 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	color: #fff;
+	color: #c19e7d;
+	line-height: 50px;
+	font-size: 14px;
+}
+
+.topbar-button{
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.topbar-button:hover{
+	color: #a56d38;
+}
+
+.topbar-left{
+	float: left;
+}
+.topbar-right{
+	float: right;
 }
