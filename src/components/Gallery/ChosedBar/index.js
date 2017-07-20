@@ -22,7 +22,7 @@ class ChosedBar extends React.Component{
 		let number = chosedPic.length;
 		let icons = [];
 		chosedPic.forEach((item,index)=>{
-			icons.push(<Icon img={item.thumbnail} key={index}/>)
+			icons.push(<Icon img={item.thumbnail} key={index} onClick={this._removePrint.bind(this,item.id)}/>)
 		})
 		return(
 			<div className='chosed-bar'>
@@ -77,12 +77,16 @@ class ChosedBar extends React.Component{
 			left
 		})
 	}
+
+	_removePrint(id){
+		this.props.removePrint(id);
+	}
 }
 
 class Icon extends React.Component{
 	render(){
 		return(
-			<div className='icon' style={{backgroundImage: `url('${this.props.img}')`}}>
+			<div className='icon' style={{backgroundImage: `url('${this.props.img}')`}} onClick={this.props.onClick}>
 				<div className='mask'><Text text={['移除']}/></div>
 			</div>
 		)

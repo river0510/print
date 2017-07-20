@@ -96,6 +96,18 @@ export default function reducer(state = initialState, action){
 			return newState;
 		}
 		case "REMOVE_PRINT": {
+			if(!checkChosedPic(state, action.id)){
+				return state;
+			}
+			let newState = deepCopy(state);
+			let {chosedPic} = newState;
+			for(let i = 0; i < chosedPic.length; i++){
+				if(chosedPic[i].id === action.id){
+					chosedPic.splice(i,1);
+					break;
+				}
+			}
+			return newState;
 		}
 		case "CHOSE_STAGE": {
 
