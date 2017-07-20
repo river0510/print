@@ -79,6 +79,9 @@ class Menu extends React.Component{
 	}
 
 	_menuClick(id){
+		this.setState({
+			chosedPage: 1
+		})
 		this.props.choseMenu(id);
 	}
 
