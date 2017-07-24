@@ -9,7 +9,7 @@ export default class NavBar extends React.Component{
 			<div className='navbar'>
 				<div className='navbar-wrapper'>					
 					<NavItem link='/' text={['首页','HOME']}/>
-					<NavItem text={['商城','SHOP']}/>
+					<NavItem text={['SHOP','SHOP']}/>
 					<NavItem link='/gallery' text={['體驗館','GALLERY']}/>
 					<NavBarLogo />
 					<NavItem text={['門店','STORE']}/>
