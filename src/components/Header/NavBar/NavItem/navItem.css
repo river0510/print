@@ -5,15 +5,16 @@
 	text-align: center;
 	cursor: pointer;
 	display: inline-block;
+	vertical-align: top;
 }
 
 .nav-text{
-	height: 20px;
+	height: 35px;
+	line-height: 35px;
 }
 
 .nav-text a{
 	color: #c19e7d;
-	line-height: 20px;
 	font-size: 16px;
 	font-weight: 200;
 	letter-spacing: 3px;
@@ -26,12 +27,12 @@
 .underline{
 	height: 1px;
 	width: 0;
-	margin: 5px 0;
+	margin: 5px auto;
 	background: #c19e7d;
-	display: inline-block;
+	display: block;
 	transition: width 0.3s;
 }
 
 .nav-item:hover .underline{
-	width: 40%;
+	width: 50px;
 }
