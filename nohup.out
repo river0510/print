@@ -1,0 +1,78 @@
+
+> @0.0.1 start /Users/huanghe/Documents/web/print
+> node server.js --env=dev
+
+events.js:160
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE 127.0.0.1:8000
+    at Object.exports._errnoException (util.js:1036:11)
+    at exports._exceptionWithHostPort (util.js:1059:20)
+    at Server._listen2 (net.js:1252:14)
+    at listen (net.js:1288:10)
+    at net.js:1398:9
+    at GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:62:16)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:81:10)
+
+npm ERR! Darwin 15.6.0
+npm ERR! argv "/usr/local/Cellar/node/6.7.0/bin/node" "/usr/local/bin/npm" "start"
+npm ERR! node v6.7.0
+npm ERR! npm  v3.10.7
+npm ERR! code ELIFECYCLE
+npm ERR! @0.0.1 start: `node server.js --env=dev`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the @0.0.1 start script 'node server.js --env=dev'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the  package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node server.js --env=dev
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs 
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls 
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /Users/huanghe/Documents/web/print/npm-debug.log
+
+> @0.0.1 start /Users/huanghe/Documents/web/print
+> node server.js --env=dev
+
+events.js:160
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE 127.0.0.1:8000
+    at Object.exports._errnoException (util.js:1036:11)
+    at exports._exceptionWithHostPort (util.js:1059:20)
+    at Server._listen2 (net.js:1252:14)
+    at listen (net.js:1288:10)
+    at net.js:1398:9
+    at GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:62:16)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:81:10)
+
+npm ERR! Darwin 15.6.0
+npm ERR! argv "/usr/local/Cellar/node/6.7.0/bin/node" "/usr/local/bin/npm" "start"
+npm ERR! node v6.7.0
+npm ERR! npm  v3.10.7
+npm ERR! code ELIFECYCLE
+npm ERR! @0.0.1 start: `node server.js --env=dev`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the @0.0.1 start script 'node server.js --env=dev'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the  package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node server.js --env=dev
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs 
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls 
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /Users/huanghe/Documents/web/print/npm-debug.log

@@ -8,7 +8,7 @@ export default class Slide extends React.Component{
 	render(){
 		return(
 			<div className='slide'>
-				<Carousel  className='slide-wrapper'>
+				<Carousel  className='slide-wrapper' autoplay>
 					<div className='slide-img'><img  src={pic1} alt=""/></div>
 					<div className='slide-img'><img  src={pic1} alt=""/></div>
 				</Carousel>
