@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductReduce from './ProductReduce'
+import ProductIntroduce from './ProductIntroduce'
 import pic1 from '../../images/section3-p1.jpg'
 import pic2 from '../../images/section3-p2.jpg'
 import './productSection.css'
@@ -12,8 +12,8 @@ export default class ProductSection extends React.Component{
 			<div className='product-section'>
 				<div className='product-content'>
 					<h1 className='product-section-title'>THE FABRIC UNION</h1>
-					<ProductReduce title={['Product Information']} content={content} img={pic1}/>
-					<ProductReduce title={['Product Information']} content={content} img={pic2}/>
+					<ProductIntroduce title={['Product Information']} content={content} img={pic1}/>
+					<ProductIntroduce title={['Product Information']} content={content} img={pic2}/>
 				</div>
 			</div>
 		)

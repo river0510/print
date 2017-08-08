@@ -15,8 +15,8 @@ class HomeLayout extends React.Component {
         <Header/>
         <CSSTransitionGroup
               transitionName="router"
-              transitionEnterTimeout={1200}
-              transitionLeaveTimeout={200}
+              transitionEnterTimeout={600}
+              transitionLeaveTimeout={600}
           >
 			<div key={this.props.location.pathname}>
 			{this.props.children}

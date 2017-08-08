@@ -1,8 +1,8 @@
 import React from 'react'
 import Text from '../../Text'
-import './productReduce.css'
+import './productIntroduce.css'
 
-export default class ProductReduce extends React.Component{
+export default class ProductIntroduce extends React.Component{
 	render(){
 		return(
 			<figure className='product-figure'>

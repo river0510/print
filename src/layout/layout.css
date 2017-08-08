@@ -5,7 +5,7 @@
 /*dom 添加时的动画*/
 .router-enter.router-enter-active {
   opacity: 1;
-  transition: opacity 1200ms ease-in;
+  transition: opacity 600ms ease-in;
 }
 
 .router-leave {
@@ -15,5 +15,5 @@
 /*dom 移除时的动画*/
 .router-leave.router-leave-active {
   opacity: 0.01;
-  transition: opacity 200ms ease-in;
+  transition: opacity 600ms ease-in;
 }
